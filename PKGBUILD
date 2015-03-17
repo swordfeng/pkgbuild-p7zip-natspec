@@ -1,4 +1,4 @@
-# $Id: PKGBUILD 231300 2015-02-11 16:17:41Z bisson $
+# $Id: PKGBUILD 233099 2015-03-09 03:37:30Z bisson $
 # Contributor: Thayer Williams <thayer@archlinux.org>
 # Contributor: Hugo Doria <hugo@archlinux.org>
 # Contributor: TuxSpirit<tuxspirit@archlinux.fr>  2007/11/17 21:22:36 UTC
@@ -6,8 +6,8 @@
 # Maintainer: Gaetan Bisson <bisson@archlinux.org>
 
 pkgname=p7zip
-pkgver=9.38
-pkgrel=2
+pkgver=9.38.1
+pkgrel=1
 pkgdesc='Command-line version of the 7zip compressed file archiver'
 url='http://p7zip.sourceforge.net/'
 license=('GPL' 'custom')
@@ -19,7 +19,7 @@ makedepends=('yasm' 'nasm' 'wxgtk')
 source=("http://downloads.sourceforge.net/project/${pkgname}/${pkgname}/${pkgver}/${pkgname}_${pkgver}_src_all.tar.bz2"
         'osversion.patch'
         '7zFM.desktop')
-sha1sums=('693bc2a1426df7a12762b4542a8327add23f0dc3'
+sha1sums=('6b1eccf272d8b141a94758f80727ae633568ba69'
           '8c086db1c7be0d52d2ac971f44adbdccf6dd82de'
           'f2c370d6f1b286b7ce9a2804e22541b755616a40')
 
@@ -67,5 +67,5 @@ package() {
 	find GUI/help -type d -exec chmod 755 {} \;
 	cp -r GUI/help "${pkgdir}"/usr/lib/p7zip/
 
-	chmod -R u+w,o+r "${pkgdir}/usr"
+	chmod -R a+r,u+w,a+X "${pkgdir}/usr"
 }
